@@ -1,0 +1,19 @@
+
+public class AppleStocks {
+
+	public static void main(String[] args) {
+		int[] stockPricesYesterday = null;
+		System.out.println(getBestProfit(stockPricesYesterday));
+	}
+
+	private static int getBestProfit(int[] stockPricesYesterday) {
+		int purchasePrice = stockPricesYesterday[0];
+		int sellingPrice = stockPricesYesterday[i];
+		int profitOrLoss = sellingPrice - purchasePrice;
+		for (int i = 1; i < stockPricesYesterday.length; i++) {
+
+		}
+		return (Integer) null;
+	}
+
+}

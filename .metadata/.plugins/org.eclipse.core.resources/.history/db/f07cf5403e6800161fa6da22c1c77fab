@@ -1,0 +1,84 @@
+import java.io.IOException;
+import java.util.Date;
+
+public class Coursera2 {
+
+	public static void main(String[] args) throws IOException {
+		long launch_date1 = Long.parseLong("1469923200000");
+		long launch_date2 = Long.parseLong("1469923200000");
+		long enrollment_date = Long.parseLong("1470268800000");
+		long[][] specialization_courses = new long[2][3];
+		specialization_courses[0][0] = launch_date1;
+		specialization_courses[0][1] = 2;
+		specialization_courses[0][2] = 4;
+		specialization_courses[1][0] = launch_date2;
+		specialization_courses[1][1] = 2;
+		specialization_courses[1][2] = 4;
+
+		long[][] ans = getSpecializationSessionSchedule(specialization_courses, enrollment_date);
+		for (int i = 0; i < ans.length; i++) {
+		}
+	}
+
+	static long[][] getSpecializationSessionSchedule(long[][] specialization_courses, long enrollment_date) {
+		long[][] specializationSessionSchedule = new long[specialization_courses.length][2];
+		Date enrollmentDate = new Date(enrollment_date);
+		Date launchDate;
+		Date endDate;
+		Date nextSession = null;
+		for (int i = 0; i < specialization_courses.length; i++) {
+			launchDate = new Date(specialization_courses[i][0]);
+			if (launchDate.after(nextSession)) {
+				nextSession = getNextSession(launchDate);
+			}
+			long repeat_frequency = specialization_courses[i][1];
+			long secondsToAddForNextSession = repeat_frequency * 7 * 24 * 60 * 60 * 1000;
+			if (enrollmentDate.after(nextSession)) {
+				nextSession = new Date(nextSession.getTime() + secondsToAddForNextSession);
+			}
+			specializationSessionSchedule[i][0] = nextSession.getTime();
+			long duration = specialization_courses[i][2];
+			endDate = getEndDate(nextSession, duration);
+			specializationSessionSchedule[i][1] = endDate.getTime();
+			nextSession = endDate;
+		}
+		return specializationSessionSchedule;
+	}
+
+	private static Date getNextSession(Date date) {
+		int daysToIncrementForNextSession = (8 - date.getDay()) % 7;
+		return addDays(date, daysToIncrementForNextSession);
+	}
+
+	private static Date getEndDate(Date date, long duration) {
+		long daysToIncrementForNextSession = duration * 7;
+		return addDays(date, daysToIncrementForNextSession);
+	}
+
+	private static Date addDays(Date date, long daysToIncrementForNextSession) {
+		return new Date(date.getTime() + (daysToIncrementForNextSession * 24 * 60 * 60 * 1000));
+	}
+
+	private static long[] getUpcomingSessions(long launch_date, int repeat_frequency, long enrollment_date) {
+		int numberOfSessions = 3;
+		int minRepeatFrequency = 1;
+		long[] upcomingSessions = new long[numberOfSessions];
+		Date launchDate = new Date(launch_date);
+		int daysToIncrementForNextSession = (8 - launchDate.getDay()) % 7;
+		Date nextSession = new Date(launchDate.getTime() + (daysToIncrementForNextSession * 24 * 60 * 60 * 1000));
+		Date enrollmentDate = new Date(enrollment_date);
+		if (repeat_frequency == 0) {
+			repeat_frequency = minRepeatFrequency;
+		}
+		long secondsToAddForNextSession = repeat_frequency * 7 * 24 * 60 * 60 * 1000;
+		if (enrollmentDate.after(nextSession)) {
+			nextSession = new Date(nextSession.getTime() + secondsToAddForNextSession);
+		}
+		for (int i = 0; i < numberOfSessions; i++) {
+			upcomingSessions[i] = nextSession.getTime();
+			nextSession = new Date(nextSession.getTime() + secondsToAddForNextSession);
+		}
+		return upcomingSessions;
+	}
+
+}

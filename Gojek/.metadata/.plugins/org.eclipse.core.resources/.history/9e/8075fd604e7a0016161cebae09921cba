@@ -1,0 +1,25 @@
+package com.ak.gojek.parkinglotsystem.client.commands;
+
+import java.util.List;
+
+import com.ak.gojek.parkinglotsystem.car.Car;
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingLot;
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingLotBuilder;
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingSlot;
+
+public class StatusCommand extends Command {
+
+	@Override
+	public void executeCommand(ParkingLotBuilder parkingLotBuilder, String command) {
+//		List<String> parkingSlotsStatus = parkingLot.getStatus();
+		List<String> parkingSlotsStatus = parkingLotBuilder.getStatus();
+		if (parkingSlotsStatus.isEmpty()) {
+			System.out.println("Parking lot is empty");
+		}
+		System.out.println("Slot No.\tRegistration No\tColour");
+		for (String parkingSlotStatus : parkingSlotsStatus) {
+			System.out.println(parkingSlotStatus);
+		}
+	}
+
+}

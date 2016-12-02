@@ -1,0 +1,8 @@
+package com.ak.gojek.parkinglotsystem.parkinglot;
+
+import java.util.List;
+
+public class ParkingLotBuilder {
+	private List<ParkingLot> parkingLots;
+
+}

@@ -1,0 +1,11 @@
+class Sunnygraphs2:
+    def count(self, a):
+        count = 1
+        for i in range(0, len(a), 1):
+            print "combination length = " + i
+            for j in a:
+                print j
+        return count
+
+
+print Sunnygraphs2().count((1, 0))

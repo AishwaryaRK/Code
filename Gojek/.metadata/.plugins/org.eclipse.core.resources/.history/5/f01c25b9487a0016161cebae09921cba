@@ -1,0 +1,34 @@
+package com.ak.gojek.parkinglotsystem.parkinglot;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ParkingLotBuilder {
+	private List<ParkingLot> parkingLots;
+	private int strategy;
+
+	public ParkingLotBuilder() {
+		super();
+		this.parkingLots = new ArrayList<ParkingLot>();
+	}
+
+	public void createParkingLot(int slotCapacity) {
+		ParkingLot parkingLot = new ParkingLot(slotCapacity);
+		parkingLots.add(parkingLot);
+	}
+
+	public void setStrategy(int strategy) {
+		this.strategy=strategy;
+	}
+
+	public List<ParkingLot> getParkingLots() {
+		return parkingLots;
+	}
+
+	public int getStrategy() {
+		return strategy;
+	}
+	
+	
+
+}

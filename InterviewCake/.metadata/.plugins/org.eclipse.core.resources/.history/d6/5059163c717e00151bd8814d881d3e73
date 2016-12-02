@@ -1,0 +1,14 @@
+
+public class AppleStocks {
+
+	public static void main(String[] args) {
+		int[] stockPricesYesterday = null;
+		System.out.println(getBestProfit(stockPricesYesterday));
+	}
+
+	private static int getBestProfit(int[] stockPricesYesterday) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

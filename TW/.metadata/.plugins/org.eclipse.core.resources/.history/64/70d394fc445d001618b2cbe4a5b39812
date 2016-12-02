@@ -1,0 +1,9 @@
+package com.ak.game.piece;
+
+public class Pawn {
+
+	public Pawn() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.ak.tw.inventorymanagement.inventory;
+
+import com.ak.tw.inventorymanagement.country.Country;
+
+public class Inventory {
+	private int ipodStock;
+	private int price;
+	private Country country;
+	private static final int TRANSPORTCOST = 400;
+
+	public Inventory(int ipodStock, int price, Country country) {
+		super();
+		this.ipodStock = ipodStock;
+		this.price = price;
+		this.country = country;
+	}
+
+}

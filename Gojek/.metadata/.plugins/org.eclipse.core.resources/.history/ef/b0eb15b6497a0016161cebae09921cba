@@ -1,0 +1,46 @@
+package com.ak.gojek.parkinglotsystem.parkinglot;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ak.gojek.parkinglotsystem.car.Car;
+
+public class ParkingLotBuilder {
+	private List<ParkingLot> parkingLots;
+	private int strategy;
+
+	public ParkingLotBuilder() {
+		super();
+		this.parkingLots = new ArrayList<ParkingLot>();
+	}
+
+	public void createParkingLot(int slotCapacity) {
+		ParkingLot parkingLot = new ParkingLot(slotCapacity);
+		parkingLots.add(parkingLot);
+	}
+
+	public void setStrategy(int strategy) {
+		this.strategy = strategy;
+	}
+
+	public List<ParkingLot> getParkingLots() {
+		return parkingLots;
+	}
+
+	public int getStrategy() {
+		return strategy;
+	}
+
+	public void park(Car car) {
+		if (getStrategy() == 1) {
+			parkCarInNearestMostEmptyParkingLot(car);
+		} else if (getStrategy() == 2) {
+//			parkCarInNearestParkingLot(car);
+		}
+	}
+
+	private void parkCarInNearestMostEmptyParkingLot(Car car) {
+		
+	}
+
+}

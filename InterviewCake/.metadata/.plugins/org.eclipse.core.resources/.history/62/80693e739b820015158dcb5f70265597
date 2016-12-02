@@ -1,0 +1,11 @@
+import java.lang.reflect.Array;
+import java.lang.reflect.GenericArrayType;
+
+public class ProductOfAllOtherNumbers {
+
+	public static void main(String[] args) {
+		productOfAllOtherNumbers = getProductOfAllOtherNumbers();
+		System.out.println(printArray());
+	}
+
+}

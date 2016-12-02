@@ -1,0 +1,157 @@
+package com.ak.gojek.parkinglotsystem.parkinglot;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ak.gojek.parkinglotsystem.car.Car;
+import com.ak.gojek.parkinglotsystem.colour.Colour;
+
+public class ParkingLot {
+	private static final int DEFAULT_CAPACITY = 6;
+	private static final int NOT_FOUND = 0;
+	private int capacity;
+	private int parkingLotNumber;
+	private List<ParkingSlot> parkingSlots;
+
+	public ParkingLot(int capacity) {
+		super();
+		this.capacity = capacity;
+		this.parkingSlots = new ArrayList<ParkingSlot>();
+		initializeParkingSlots();
+	}
+
+	public ParkingLot() {
+		this(DEFAULT_CAPACITY);
+	}
+
+	private void initializeParkingSlots() {
+		for (int slotNumber = 1; slotNumber <= getCapacity(); slotNumber++) {
+			parkingSlots.add(new ParkingSlot(slotNumber));
+		}
+	}
+
+	/**
+	 * @param car
+	 * @return nearest parkingSlot if car is parked
+	 * @return null if no slot is available
+	 */
+	public ParkingSlot park(Car car) {
+		ParkingSlot parkingSlot = getNearestAvailableParkingSlot();
+		if (parkingSlot != null) {
+			parkingSlot.setParkedCar(car);
+		}
+		return parkingSlot;
+	}
+
+	/**
+	 * @return nearest parkingSlot if available else null
+	 */
+	private ParkingSlot getNearestAvailableParkingSlot() {
+		for (ParkingSlot parkingSlot : parkingSlots) {
+			if (parkingSlot.isAvailable()) {
+				return parkingSlot;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * @param parkingSlotNumber
+	 * @return false if invalid parkingSlotNumber else true
+	 */
+	public boolean leaveCar(int parkingSlotNumber) {
+		for (ParkingSlot parkingSlot : parkingSlots) {
+			if (parkingSlot.getSlotNumber() == parkingSlotNumber) {
+				parkingSlot.empty();
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public List<String> getRegistrationNumbersForCarsWithColour(Colour colour) {
+		List<String> registrationNumbersForCarsWithColour = new ArrayList<String>();
+		for (ParkingSlot parkingSlot : parkingSlots) {
+			if (parkingSlot.isParkedCarColourSame(colour)) {
+				registrationNumbersForCarsWithColour.add(parkingSlot.getParkedCarRegistrationNumber());
+			}
+		}
+		return registrationNumbersForCarsWithColour;
+	}
+
+	public List<Integer> getSlotNumbersForCarsWithColour(Colour colour) {
+		List<Integer> slotNumbersForCarsWithColour = new ArrayList<Integer>();
+		for (ParkingSlot parkingSlot : parkingSlots) {
+			if (parkingSlot.isParkedCarColourSame(colour)) {
+				slotNumbersForCarsWithColour.add(parkingSlot.getSlotNumber());
+			}
+		}
+		return slotNumbersForCarsWithColour;
+	}
+
+	public int getSlotNumberForRegistrationNumber(String carRegistrationNumber) {
+		for (ParkingSlot parkingSlot : parkingSlots) {
+			if (parkingSlot.isParkedCarRegistrationNumberSame(carRegistrationNumber)) {
+				return parkingSlot.getSlotNumber();
+			}
+		}
+		return NOT_FOUND;
+	}
+
+	/**
+	 * @return list of strings
+	 *         "parkingSlotNumber  parkedCarRegistrationNumber  parkedCarColor"
+	 *         for filled parking slots only
+	 */
+	public List<String> getStatus() {
+		List<String> parkingSlotsStatus = new ArrayList<String>();
+		for (ParkingSlot parkingSlot : parkingSlots) {
+			if (!parkingSlot.isAvailable()) {
+				parkingSlotsStatus.add(parkingSlot.getStatus());
+			}
+		}
+		return parkingSlotsStatus;
+	}
+
+	public int getCapacity() {
+		return capacity;
+	}
+
+	private void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+	public List<ParkingSlot> getParkingSlots() {
+		return parkingSlots;
+	}
+
+	
+	public int getParkingLotNumber() {
+		return parkingLotNumber;
+	}
+
+	private void setParkingLotNumber(int parkingLotNumber) {
+		this.parkingLotNumber = parkingLotNumber;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("ParkingLot [capacity=");
+		builder.append(capacity);
+		builder.append(", parkingLotNumber=");
+		builder.append(parkingLotNumber);
+		builder.append(", parkingSlots=");
+		builder.append(parkingSlots);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	public int getNumberOfEmptySlots() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+
+}

@@ -1,0 +1,15 @@
+package com.ak.gojek.parkinglotsystem.client.commands;
+
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingLot;
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingLotBuilder;
+
+public class StrategyCommand extends Command{
+
+	@Override
+	public void executeCommand(ParkingLotBuilder parkingLotBuilder, String command) {
+		String[] splittedCommand = command.split(" ");
+		int strategy = Integer.parseInt(splittedCommand[1]);
+		parkingLotBuilder.setStrategy(strategy);
+	}
+
+}

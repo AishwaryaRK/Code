@@ -1,0 +1,20 @@
+package com.ak.tw.inventorymanagement;
+
+import com.ak.tw.inventorymanagement.country.Country;
+import com.ak.tw.inventorymanagement.inventory.Inventory;
+
+public class TestClient {
+
+	public static void main(String[] args) {
+		int ipodStockBrazil = 100;
+		int priceBrazil = 100;
+		Inventory brazilInventory = new Inventory(ipodStockBrazil, priceBrazil, Country.BRAZIL);
+
+		int ipodStockArgentina = 100;
+		int priceArgentina = 50;
+		Inventory argentinaInventory = new Inventory(ipodStockArgentina, priceArgentina, Country.ARGENTINA);
+		
+		
+	}
+
+}

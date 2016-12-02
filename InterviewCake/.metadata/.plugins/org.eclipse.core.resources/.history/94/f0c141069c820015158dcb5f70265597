@@ -1,0 +1,21 @@
+
+public class ProductOfAllOtherNumbers {
+
+	public static void main(String[] args) {
+		int[] input = { 2, 4, 5, 1, 7, 8 };
+		int[] productOfAllOtherNumbers = getProductOfAllOtherNumbers(input);
+		printArray(productOfAllOtherNumbers);
+	}
+
+	private static int[] getProductOfAllOtherNumbers(int[] input) {
+		int[] productOfAllOtherNumbers = new Integer[8];
+		
+	}
+
+	private static void printArray(int[] productOfAllOtherNumbers) {
+		for (int i = 0; i < productOfAllOtherNumbers.length; i++) {
+			System.out.print(productOfAllOtherNumbers[i] + ",");
+		}
+	}
+
+}

@@ -1,0 +1,9 @@
+{
+  "name": "WordPuzzle",
+  "version": "0.0.1",
+  "description": "Find valid engish dictionary words",
+  "engines": {
+    "node": "4.4.x"
+  },
+  "author": "Aishwarya Kaneri"
+}

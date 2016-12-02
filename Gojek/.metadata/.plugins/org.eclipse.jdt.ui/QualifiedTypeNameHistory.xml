@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.swing.plaf.ColorUIResource"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="javax.print.attribute.standard.Fidelity"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="org.junit.ComparisonFailure"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
+<fullyQualifiedTypeName name="org.hamcrest.core.Is"/>
+<fullyQualifiedTypeName name="org.hamcrest.MatcherAssert"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.client.Rule"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.parkinglot.ParkingSlot"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.colour.Colour"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.client.Command"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.client.commands.LeaveCommand"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.client.commands.ParkCommand"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.client.commands.RegistrationNumbersForCarsWithColourCommand"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.client.commands.SlotNumberForRegistrationNumberCommand"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.client.commands.SlotNumbersForCarsWithColourCommand"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.client.commands.StatusCommand"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.car.Car"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.client.commands.StrategyCommand"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.client.commands.Command"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.client.commands.CreateParkingLotCommand"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.parkinglot.ParkingLotBuilder"/>
+<fullyQualifiedTypeName name="com.ak.gojek.parkinglotsystem.parkinglot.ParkingLot"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+</qualifiedTypeNameHistroy>

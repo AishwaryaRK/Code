@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;SherlockAndSquares.getNumberOfEvenlyDividingDigits(...)&apos; to &apos;getSquares&apos;&#x0A;- Original project: &apos;Algorithm&apos;&#x0A;- Original element: &apos;SherlockAndSquares.getNumberOfEvenlyDividingDigits(...)&apos;&#x0A;- Renamed element: &apos;SherlockAndSquares.getSquares(...)&apos;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;getNumberOfEvenlyDividingDigits&apos;" flags="589826" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;{SherlockAndSquares.java[SherlockAndSquares~getNumberOfEvenlyDividingDigits~QString;" name="getSquares" references="true" stamp="1451889558295" version="1.0"/>
+</session>

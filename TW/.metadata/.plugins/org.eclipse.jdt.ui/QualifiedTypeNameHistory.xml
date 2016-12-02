@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.ak.game.Color"/>
+<fullyQualifiedTypeName name="com.ak.game.piece.Piece"/>
+<fullyQualifiedTypeName name="com.ak.game.cell.Cell"/>
+</qualifiedTypeNameHistroy>

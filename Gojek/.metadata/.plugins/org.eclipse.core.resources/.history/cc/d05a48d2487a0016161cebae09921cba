@@ -1,0 +1,24 @@
+package com.ak.gojek.parkinglotsystem.client.commands;
+
+import com.ak.gojek.parkinglotsystem.car.Car;
+import com.ak.gojek.parkinglotsystem.colour.Colour;
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingLot;
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingLotBuilder;
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingSlot;
+
+public class ParkCommand extends Command {
+	@Override
+	public void executeCommand(ParkingLotBuilder parkingLotBuilder, String command) {
+		String[] splittedCommand = command.split(" ");
+		String carRegistrationNumber = splittedCommand[1];
+		Colour colour = Colour.valueOf(splittedCommand[2].toUpperCase());
+		Car car = new Car(carRegistrationNumber, colour);
+		parkingLotBuilder.park(car);
+//		ParkingSlot parkingSlot = parkingLot.park(car);
+//		if (parkingSlot == null) {
+//			System.out.println("Sorry, parking lot is full");
+//		} else {
+//			System.out.println("Allocated slot number: " + parkingSlot.getSlotNumber());
+//		}
+	}
+}

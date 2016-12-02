@@ -1,0 +1,9 @@
+package com.ak.tw.inventorymanagement.inventory;
+
+import com.ak.tw.inventorymanagement.country.Country;
+
+public class Inventory {
+	private int ipodStock;
+	private int price;
+	private Country country;
+}

@@ -1,0 +1,48 @@
+package com.ak.game;
+
+public class Cell {
+	private int row;
+	private int col;
+
+	public Cell(int row, int col) {
+		super();
+		this.row = row;
+		this.col = col;
+	}
+
+	public Color getColor() {
+		if ((getRow() + getCol()) % 2 == 0) {
+			return Color.WHITE;
+		}
+		return Color.BLACK;
+	}
+
+	public int getRow() {
+		return row;
+	}
+
+	private void setRow(int row) {
+		this.row = row;
+	}
+
+	public int getCol() {
+		return col;
+	}
+
+	private void setCol(int col) {
+		this.col = col;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Cell [row=");
+		builder.append(row);
+		builder.append(", col=");
+		builder.append(col);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	
+}

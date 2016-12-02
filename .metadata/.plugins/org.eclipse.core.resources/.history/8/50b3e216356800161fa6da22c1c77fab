@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Coursera1 {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		long launch_date = Long.parseLong(bufferedReader.readLine());
+		long enrollment_date = Long.parseLong(bufferedReader.readLine());
+		long[] ans = getUpcomingSessions(launch_date, 2, enrollment_date);
+		for (int i = 0; i < ans.length; i++) {
+			System.out.println(ans[i]);
+		}
+	}
+
+	private static long[] getUpcomingSessions(long launch_date, int repeat_frequency, long enrollment_date) {
+		long[] upcomingSessions = new long[3];
+		Date launchDate = new Date(launch_date);
+		int launchDayIndex = (8 - launchDate.getDay()) % 7;
+		Date nextSession = new Date(launchDate.getTime() + (launchDayIndex * 24 * 60 * 60 * 1000));
+		Date enrollmentDate = new Date(enrollment_date);
+		if (enrollmentDate.after(nextSession)) {
+			for (int i = 0; i < upcomingSessions.length; i++) {
+				nextSession = new Date(nextSession.getTime() + (repeat_frequency * 7 * 24 * 60 * 60 * 1000));
+				upcomingSessions[i] = nextSession.getTime();
+			}
+		}
+		return upcomingSessions;
+	}
+}

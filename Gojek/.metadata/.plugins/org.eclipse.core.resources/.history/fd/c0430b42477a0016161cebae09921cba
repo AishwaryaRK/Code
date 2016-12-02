@@ -1,0 +1,8 @@
+package com.ak.gojek.parkinglotsystem.client.commands;
+
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingLot;
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingLotBuilder;
+
+public abstract class Command {
+	public abstract void executeCommand(ParkingLotBuilder parkingLotBuilder, String command);
+}

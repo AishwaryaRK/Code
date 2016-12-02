@@ -1,0 +1,55 @@
+package com.ak.tw.inventorymanagement.inventory;
+
+import java.util.Map;
+
+import com.ak.tw.inventorymanagement.country.Country;
+
+public class Store {
+	private Map<Country, Inventory> inventories;
+	private static final int TRANSPORTCOST = 40;
+
+	public Store(Map<Country, Inventory> inventories) {
+		super();
+		this.inventories = inventories;
+	}
+
+	public void addInventory(Country country, Inventory inventory) {
+		inventories.put(country, inventory);
+	}
+
+	public void removeInventory(Inventory inventory) {
+		inventories.remove(inventory);
+	}
+
+	public int purchase(Country country, int quantity) {
+		Inventory inventory = getInventories().get(country);
+		if (inventory.getIpodStock() >= quantity) {
+			inventory.setIpodStock(inventory.getIpodStock() - quantity);
+			return quantity * inventory.getPrice();
+		}
+		int cost = inventory.getIpodStock() * inventory.getPrice();
+		quantity -= inventory.getIpodStock();
+		if (transportStock(quantity)) {
+			return cost + quantity * TRANSPORTCOST;
+		}
+		return -1;
+	}
+
+	public Map<Country, Inventory> getInventories() {
+		return inventories;
+	}
+
+	private void setInventories(Map<Country, Inventory> inventories) {
+		this.inventories = inventories;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Store [inventories=");
+		builder.append(inventories);
+		builder.append("]");
+		return builder.toString();
+	}
+
+}

@@ -1,0 +1,36 @@
+1472269071718	Delete element
+1472269243050	Rename package 'com.ak.gojek.parkinglotsystem'
+1472269795193	Rename type 'Color'
+1472271063140	Rename local variable 'i'
+1472271786225	Delete elements
+1472271796372	Delete element
+1472271803931	Delete element
+1472271838039	Delete element
+1472271925386	Move package
+1472272033883	Rename resource 'test'
+1472272162744	Delete element
+1472272218851	Move compilation unit
+1472276385630	Delete element
+1472276430315	Move compilation unit
+1472276441214	Delete element
+1472277431249	Move compilation unit
+1472277464331	Delete element
+1472277526057	Move compilation unit
+1472278202565	Move file
+1472278287742	Move compilation unit
+1472278296245	Delete element
+1472280307789	Rename field 'car'
+1472280327324	Rename method 'getCar'
+1472280346608	Rename method 'setCar'
+1472281004860	Delete element
+1472288491259	Rename package 'com.ak.gojek.parkinglotsystem.parkinglot.client'
+1472288592647	Rename type 'ParkingLotTicketingSystemClient'
+1472289303763	Rename type 'Rule'
+1472289322292	Rename type 'ParkRule'
+1472292238063	Rename type 'RegistrationNumbersForCarsWithColour'
+1472292818622	Move compilation unit
+1472292844482	Move compilation units
+1472295352931	Delete element
+1472299159265	Delete element
+1472299293425	Delete element
+1472302960782	Delete element

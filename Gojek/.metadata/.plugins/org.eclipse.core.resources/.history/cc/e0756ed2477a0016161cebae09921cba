@@ -1,0 +1,82 @@
+package com.ak.gojek.parkinglotsystem.client;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import com.ak.gojek.parkinglotsystem.client.commands.Command;
+import com.ak.gojek.parkinglotsystem.client.commands.LeaveCommand;
+import com.ak.gojek.parkinglotsystem.client.commands.ParkCommand;
+import com.ak.gojek.parkinglotsystem.client.commands.RegistrationNumbersForCarsWithColourCommand;
+import com.ak.gojek.parkinglotsystem.client.commands.SlotNumberForRegistrationNumberCommand;
+import com.ak.gojek.parkinglotsystem.client.commands.SlotNumbersForCarsWithColourCommand;
+import com.ak.gojek.parkinglotsystem.client.commands.StatusCommand;
+import com.ak.gojek.parkinglotsystem.client.commands.StrategyCommand;
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingLot;
+import com.ak.gojek.parkinglotsystem.parkinglot.ParkingLotBuilder;
+
+public class ParkingLotSystemClient {
+	private static final String CREATE_PARKING_LOT = "create_parking_lot";
+	private static final String SELECT_STRATEGY = "select_strategy";
+	private static Command leaveCommand = new LeaveCommand();
+	private static Command statusCommand = new StatusCommand();
+	private static Command parkCommand = new ParkCommand();
+	private static Command strategyCommand = new StrategyCommand();
+	private static Command registrationNumbersForCarsWithColourCommand = new RegistrationNumbersForCarsWithColourCommand();
+	private static Command slotNumberForRegistrationNumberCommand = new SlotNumberForRegistrationNumberCommand();
+	private static Command slotNumbersForCarsWithColourCommand = new SlotNumbersForCarsWithColourCommand();
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		if (args.length > 0) {
+			String inputFileName = args[0];
+			bufferedReader = new BufferedReader(new FileReader(inputFileName));
+		}
+		String input = bufferedReader.readLine();
+		String[] splittedInput;
+		Command command;
+		// ParkingLot parkingLot = new ParkingLot();
+		ParkingLotBuilder parkingLotBuilder = new ParkingLotBuilder();
+		while (input != null) {
+			splittedInput = input.split(" ");
+			if (splittedInput[0].equals(CREATE_PARKING_LOT)) {
+				int capacity = Integer.parseInt(splittedInput[1]);
+				// parkingLot = new ParkingLot(capacity);
+				parkingLotBuilder.createParkingLot(capacity);
+				System.out.println("Created a parking lot with " + capacity + " slots");
+			} else {
+				if (splittedInput[0].equals(SELECT_STRATEGY)) {
+					int strategy = Integer.parseInt(splittedInput[1]);
+					parkingLotBuilder.setStrategy(strategy);
+				} else {
+					command = getCommand(splittedInput[0]);
+					// command.executeCommand(parkingLot, input);
+				}
+				input = bufferedReader.readLine();
+			}
+		}
+	}
+
+	private static Command getCommand(String commandString) {
+		switch (commandString) {
+		case "select_strategy":
+			return strategyCommand;
+		case "park":
+			return parkCommand;
+		case "leave":
+			return leaveCommand;
+		case "status":
+			return statusCommand;
+		case "registration_numbers_for_cars_with_colour":
+			return registrationNumbersForCarsWithColourCommand;
+		case "slot_numbers_for_cars_with_colour":
+			return slotNumbersForCarsWithColourCommand;
+		case "slot_number_for_registration_number":
+			return slotNumberForRegistrationNumberCommand;
+		default:
+			return null;
+		}
+	}
+
+}
