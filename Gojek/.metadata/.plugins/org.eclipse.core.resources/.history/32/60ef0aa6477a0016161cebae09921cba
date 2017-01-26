@@ -1,5 +1,0 @@
-package com.ak.gojek.parkinglotsystem.client.commands;
-
-public class StrategyCommand {
-
-}
