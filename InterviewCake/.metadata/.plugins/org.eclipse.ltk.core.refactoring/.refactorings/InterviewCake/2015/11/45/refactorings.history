@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;i&apos; in &apos;ProductOfAllOtherNumbers.getProductOfAllOtherNumbers(...)&apos; to &apos;j&apos;&#x0A;- Original project: &apos;InterviewCake&apos;&#x0A;- Original element: &apos;ProductOfAllOtherNumbers.getProductOfAllOtherNumbers(int[]).i&apos;&#x0A;- Renamed element: &apos;i&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;i&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{ProductOfAllOtherNumbers.java[ProductOfAllOtherNumbers~getProductOfAllOtherNumbers~\[I@i!574!582!578!578!I!0!false" name="j" references="true" stamp="1446604541505" version="1.0"/>
-</session>
