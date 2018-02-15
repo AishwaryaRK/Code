@@ -14,12 +14,12 @@ class BearPaints:
 
     def maxArea(self, W, H, M):
         if W * H <= M:
-            print "1-" + str(W * H)
+            print("1-" + str(W * H))
             return W * H
         x = int(math.sqrt(M))
-        print x
+        print(x)
         if W >= x and H >= x:
-            print "2-" + str(x * x)
+            print("2-" + str(x * x))
             return x * x
         else:
             if W >= x:
@@ -29,4 +29,4 @@ class BearPaints:
             return self.maxArea(W, H, M)
 
 
-print BearPaints().maxArea(1000000, 1000000, 720000000007)
+print(BearPaints().maxArea(1000000, 1000000, 720000000007))
