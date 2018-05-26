@@ -1,0 +1,1 @@
+def painters_partition():
