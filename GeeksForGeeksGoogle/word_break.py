@@ -22,18 +22,18 @@ def create_trie(d):
     return dictionary
 
 
-t = int(input())
-for i in range(0, t):
-    n = int(input())
-    dictionary = input().strip().split(' ')
-    s = input()
-    print(is_word_break_possible(dictionary,s))
+# t = int(input())
+# for i in range(0, t):
+#     n = int(input())
+#     dictionary = input().strip().split(' ')
+#     s = input()
+#     print(is_word_break_possible(dictionary,s))
 
 
-# import pprint
-# pp = pprint.PrettyPrinter(indent=4)
-# dictionary = "i like sam sung samsung mobile ice cream icecream man go mango".split(' ')
-# dictionary = create_trie(dictionary)
-# pp.pprint(dictionary)
-# s = "ilike"
-# print(is_word_break_possible(dictionary, s))
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
+dictionary = "i like sam sung samsung mobile ice cream icecream man go mango".split(' ')
+dictionary = create_trie(dictionary)
+pp.pprint(dictionary)
+s = "ilike"
+print(is_word_break_possible(dictionary, s))
