@@ -26,8 +26,6 @@ def get_collapsing_bricks(wall, i, j):
 
 def get_connected_bricks(brick, wall):
     connected_bricks = []
-
-
     queue = []
     queue.append(brick)
     is_connected_to_ground = False
