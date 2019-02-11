@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.Date;
 
-public class Coursera2 {
+public class Coursera {
 
 	public static void main(String[] args) throws IOException {
 		long launch_date1 = Long.parseLong("1469923200000");

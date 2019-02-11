@@ -18,7 +18,6 @@ def check_string_decomposable_into_dictionary_words(dict, s):
                         break
                     k += 1
             j += 1
-    print(is_decomposable)
     return is_decomposable[0][-1]
 
 

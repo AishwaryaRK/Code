@@ -1,13 +1,3 @@
-
-# [[1, 1, 1, 1]
-#  [1, 1, 0, 1]
-#  [0, 1, 0, 0]
-#  [0, 1, 0, 0]]
-#
-# supporting
-# brick >=
-
-
 def get_collapsing_bricks(wall, i, j):
     wall[i][j] = 0
     queue = []
