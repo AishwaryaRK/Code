@@ -5,3 +5,4 @@ InterviewCake/
 .ipynb_checkpoints/
 input.txt
 output.txt
+*.zip
