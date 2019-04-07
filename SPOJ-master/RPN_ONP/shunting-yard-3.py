@@ -18,11 +18,11 @@ OPERATORS = {
     '^' : (10, RIGHT_ASSOC)
 }
  
-#Test if a certain token is operator
+#FB if a certain token is operator
 def isOperator(token):
     return token in OPERATORS.keys()
  
-#Test the associativity type of a certain token
+#FB the associativity type of a certain token
 def isAssociative(token, assoc):
     if not isOperator(token):
         raise ValueError('Invalid token: %s' % token)
