@@ -7,7 +7,8 @@ class Solution:
         if n == 0:
             return False
 
-        x, y = 0, n - 1
+        x = 0
+        y = n - 1
 
         while True:
             t = matrix[x][y]
