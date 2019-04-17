@@ -48,10 +48,10 @@ def sortColors(nums):
     l = 0
     r = len(nums) - 1
     while i <= r:
-        while l < len(nums) and nums[l] == 0:
-            l += 1
-        while r >= 0 and nums[r] == 2:
-            r -= 1
+        # while l < len(nums) and nums[l] == 0:
+        #     l += 1
+        # while r >= 0 and nums[r] == 2:
+        #     r -= 1
 
         if nums[i] == 0:
             if i > l:
@@ -67,8 +67,9 @@ def sortColors(nums):
     print(nums)
 
 
-# sortColors([2, 0, 2, 1, 1, 0])
-# sortColors([2, 0, 2, 2, 1, 0, 1])
-# sortColors([0])
-# sortColors([0, 0, 1])
+sortColors([2, 0, 2, 1, 1, 0])
+sortColors([2, 0, 2, 2, 1, 0, 1])
+sortColors([0])
+sortColors([0, 0, 1])
 sortColors([0, 2, 2, 2, 0, 2, 1, 1])
+
