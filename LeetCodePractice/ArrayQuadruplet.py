@@ -39,6 +39,6 @@ def get_index_of_remaining_sum(arr, s1, i, j):
             y -= 1
     return -1, -1
 
-    # 1 3 5 6 7 8 9 11 12  
+    # 1 3 5 6 7 8 9 11 12
 
 

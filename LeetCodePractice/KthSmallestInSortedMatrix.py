@@ -50,7 +50,7 @@ def kthSmallest(matrix, k):
         c = n[2]
         if r + 1 < len(matrix):
             heapq.heappush(h, (matrix[r + 1][c], r + 1, c))
-
+heapq.
     return ans
 
 

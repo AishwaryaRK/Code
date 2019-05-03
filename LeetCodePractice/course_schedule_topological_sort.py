@@ -106,7 +106,6 @@ def findOrder(numCourses, prerequisites):
                 if flag:
                     stack.pop()
                     order.append(v)
-    print(order)
     for v in range(0, numCourses):
         if v not in order:
             order.append(v)
